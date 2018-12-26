@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML Dashboard</title>
+    <link rel="shortcut icon" href="{{SPLUNKWEB_URL_PREFIX}}/static/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/en-US/static/@f4c1eb50e0f3/css/build/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/en-US/static/@f4c1eb50e0f3/css/build/pages/dashboard-simple-bootstrap.min.css" />
+</head>
+<body class="simplexml preload locale-en">
+<!--
+BEGIN LAYOUT
+This section contains the layout for the dashboard. Splunk uses proprietary
+styles in <div> tags, similar to Bootstrap's grid system.
+-->
+<a class="navSkip" href="#navSkip" tabindex="1">Screen reader users, click here to skip the navigation bar</a>
+<div class="header splunk-header">
+    <div id="placeholder-splunk-bar">
+        <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk > listen to your data">splunk<strong>></strong></a>
+    </div>
+    <div id="placeholder-app-bar"></div>
+</div>
+<a id="navSkip"></a>
+<div class="dashboard-body container-fluid main-section-body" data-role="main">
+    <div class="dashboard-header clearfix">
+        <h2>HTML Dashboard</h2>
+        <p class="description">A form with radio buttons, a table, a chart, and tokens</p>
+    </div>
+
+    <!-- Replace the fieldset with this row with 3 cells -->
+    <div id="row1" class="dashboard-row dashboard-row1">
+        <div class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <div class="dashboard-element">
+                    <div class="panel-head">
+                        <h3>Number of Results</h3>
+                    </div>
+                    <div class="panel-body" id="input1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <div class="dashboard-element">
+                    <div class="panel-head">
+                        <h3>Source types</h3>
+                    </div>
+                    <div class="panel-body" id="view_checkboxgroup">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The pie chart is now in row 1, cell 3 -->
+        <div id="panel1" class="dashboard-cell" style="width: 100%;">
+            <div class="dashboard-panel clearfix">
+
+                <div class="panel-element-row">
+                    <div id="element2" class="dashboard-element chart" style="width: 100%">
+                        <div class="panel-head">
+                            <h3>Count by sourcetype</h3>
+                        </div>
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The result table is now in row 2 -->
+    <div id="row2" class="dashboard-row dashboard-row2">
+        <div id="panel2" class="dashboard-cell" style="width: 100%;">
+            <div class="dashboard-panel clearfix">
+
+                <div class="panel-element-row">
+                    <div id="element1" class="dashboard-element table" style="width: 100%">
+                        <div class="panel-head">
+                            <h3>index=_internal $sourcetype$ | head $headcount$</h3>
+                        </div>
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
